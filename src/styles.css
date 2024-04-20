@@ -1,1 +1,92 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  *:focus {
+    @apply outline-2 outline-dashed outline-offset-8 outline-mint
+  }
+  nav {
+    @apply flex gap-[25px] tablet:gap-[32px];
+  }
+  nav a img {
+    @apply max-h-5 tablet:max-h-[32px] desktop:max-h-[25px]
+  }
+  body {
+    @apply font-space text-white bg-gradient-mobile tablet:bg-gradient-tablet desktop:bg-gradient-desktop;
+  }
+
+  input,
+  textarea {
+    @apply w-full px-[24px] pb-[17px] bg-night text-white font-medium text-base leading-[1.625rem] uppercase placeholder:text-white placeholder:opacity-50 placeholder:uppercase border-b border-b-white;
+  }
+
+}
+
+@layer components {
+  .logo {
+    @apply text-[1.5rem] leading-[2rem] font-bold tracking-[-0.33px] tablet:text-[32px] tablet:tracking-[-0.444px];
+  }
+  header::after {
+    @apply content-rings absolute left-[-344px] top-[124px] tablet:left-[-265px] tablet:top-[86px] desktop:left-[-100px] desktop:top-[133px]
+  }
+  .pic {
+    @apply mobile:w-[174px] mobile:h-[242px] tablet:w-[322px] tablet:h-[600px] desktop:w-[445px] desktop:h-[720px] absolute top-0 right-1/2 mobile:translate-x-1/2 desktop:top-auto tablet:right-[-9px] desktop:bottom-[-10px]
+  }
+  .intro::after {
+    @apply absolute content-circle top-[254px] right-0 translate-x-1/2 tablet:top-[471px] desktop:top-[323px] desktop:right-[371px] desktop:translate-x-0;
+  }
+  .heading-xl {
+    @apply  leading-none  font-bold text-[2.5rem] tracking-[-1.136px] tablet:text-[4.5rem] tablet:tracking-[-2.045px] desktop:text-[5.5rem] desktop:tracking-[-2.5px];
+  }
+
+  .heading-l {
+    @apply text-[3rem] leading-[3.5rem] tracking-[-1.5px] font-bold;
+  }
+
+  .heading-m {
+    @apply text-[1.5rem] leading-[2rem] font-bold;
+  }
+
+  .body-m {
+    @apply text-[1.125rem] leading-[1.75rem] font-medium;
+  }
+
+  .link {
+    @apply uppercase text-[1rem] leading-[1.625rem] font-bold tracking-[2.286px] hover:text-mint border-b-2 border-b-mint;
+  }
+
+  .app-skills::after {
+    @apply absolute content-rings right-[-344px] top-[1287px] tablet:right-[-332px] tablet:top-[1047px] desktop:right-[-239px] desktop:top-[1077px];
+  }
+
+  #contact-me::after {
+    @apply content-rings absolute left-[-344px] bottom-[269px] tablet:left-[-368px] tablet:bottom-[130px] desktop:left-[-205px] desktop:bottom-[219px];
+  }
+
+  .project-img::after {
+    @apply content-[''] absolute w-full h-full -top-full left-0 duration-200 bg-[#00000075] z-10;
+  }
+
+  .error-msg {
+    @apply text-myred text-xs font-medium tracking-[-0.167px] text-right mt-[5px];
+  }
+  .error {
+    @apply invalid:border-b-myred;
+  }
+  .valid {
+    @apply valid:border-b-mint;
+  }
+  .input-wrapper {
+    @apply relative;
+  }
+  .input-wrapper::after {
+    @apply content-error absolute top-0 right-0;
+  }
+}
+
+.pic {
+  z-index: -1;
+}
